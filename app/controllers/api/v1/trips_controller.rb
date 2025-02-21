@@ -10,6 +10,7 @@ class Api::V1::TripsController < ApplicationController
   end
 
   def create
+    binding.pry
     @trip = Trip.new(trip_params)
 
     if @trip.save
@@ -32,6 +33,6 @@ class Api::V1::TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:name, :budget_min, :budget_max, :max_duration, :status, preferred_seasons: [])
+    params.permit(:name, :budget_min, :budget_max, :max_duration, :status, :preferred_season)
   end
 end

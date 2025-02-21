@@ -24,7 +24,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_21_190223) do
     t.decimal "budget_min", precision: 10, scale: 2, null: false
     t.decimal "budget_max", precision: 10, scale: 2, null: false
     t.integer "max_duration", null: false
-    t.enum "preferred_seasons", null: false, enum_type: "seasons"
+    t.enum "preferred_season", null: false, enum_type: "seasons"
     t.enum "status", null: false, enum_type: "statuses"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

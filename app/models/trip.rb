@@ -8,5 +8,5 @@ class Trip < ApplicationRecord
   validates :budget_max, presence: true, numericality: { greater_than: :budget_min }
 
   validates :status, inclusion: { in: VALID_STATUSES }
-  validates :preferred_seasons, inclusion: { in: VALID_SEASONS }
+  validates :preferred_season, inclusion: { in: VALID_SEASONS }
 end
