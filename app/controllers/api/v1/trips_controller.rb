@@ -1,19 +1,19 @@
 class Api::V1::TripsController < ApplicationController
   def index
     @trips = Trip.all
-    render json: @trips
+    render json: @trips, each_serializer: TripSerializer, status: :ok
   end
 
   def show
     @trip = Trip.find(params[:id])
-    render json: @trip
+    render json: @trip, serializer: TripSerializer, status: :ok
   end
 
   def create
     @trip = Trip.new(trip_params)
 
     if @trip.save
-      render json: @trip, status: :created
+      render json: @trip, serializer: TripSerializer, status: :created
     else
       render json: { errors: @trip.errors.full_messages }, status: :unprocessable_entity
     end
@@ -23,7 +23,7 @@ class Api::V1::TripsController < ApplicationController
     @trip = Trip.find(params[:id])
 
     if @trip.update(trip_params)
-      render json: @trip
+      render json: @trip, serializer: TripSerializer, status: :ok
     else
       render json: { errors: @trip.errors.full_messages }, status: :unprocessable_entity
     end
