@@ -52,7 +52,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "factory_bot_rails" # Switch to test factories instead of fixtures
   gem "faker" # Used to generate fake data in test factories
-  gem "pry", "0.14.2"
+  gem "pry", "0.15.2"
   gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails", "~>7.1.0" # Add in rspec testing
